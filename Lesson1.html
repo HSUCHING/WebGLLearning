@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lesson One</title>
+
+
+    <script id="FragmentShader" type="x-shader/x-fragment">
+    precision mediump float;
+    void main(void) {
+        gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+    }
+
+
+    </script>
+
+    <script id="VertexShader" type="x-shader/x-vertex">
+
+    attribute vec3 aVertexPosition;
+
+    uniform mat4 uMVMatrix;
+    uniform mat4 uPMatrix;
+
+    void main(void) {
+        gl_Position = uPMatrix * uMVMatrix * vec4(aVertexPosition, 1.0);
+    }
+
+    </script>
+    <script type="text/javascript" src="js/Oak3D_v_0_5.js"></script>
+
+</head>
+<body onload="webGLStart();">
+
+<canvas id="lesson01-canvas" style="border: none;" width="1000" height="1000"></canvas>
+
+
+<script type="text/javascript" src="js/WebGLPublicInterface.js"></script>
+<script type="text/javascript" src="js/LessonOne.js"></script>
+
+
+
+</body>
+</html>
